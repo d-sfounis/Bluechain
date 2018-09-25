@@ -1,1 +1,3 @@
-This is the BlueChian initial commit!
+This is the BlueChain initial commit!
+
+TODO: Include everything in this Readme :)
