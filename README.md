@@ -14,9 +14,9 @@ powered by <b>the BYTOM Blockchain</b> - https://bytom.io
 
 - [Overview](#overview)
 - [Bluechain's design](#bluechains-design)
-- [Case Study & Whitepaper](#case-study-&-whitepaper)
+- [Case Study & Whitepaper](#case-study--whitepaper)
 - [Future work](#future-work)
-- [Acknowledgements & License](#acknowledgements-&-license)
+- [Acknowledgements & License](#acknowledgements--license)
 
 ---
 
