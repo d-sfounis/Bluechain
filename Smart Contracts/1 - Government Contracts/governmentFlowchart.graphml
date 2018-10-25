@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--Created by yFiles for HTML 2.1.0.5-->
+<graphml xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://www.yworks.com/xml/schema/graphml.html/2.0/ygraphml.xsd " xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:demostyle="http://www.yworks.com/yFilesHTML/demos/FlatDemoStyle/1.0" xmlns:bpmn="http://www.yworks.com/xml/yfiles-for-html/bpmn/2.0" xmlns:demotablestyle="http://www.yworks.com/yFilesHTML/demos/FlatDemoTableStyle/1.0" xmlns:uml="http://www.yworks.com/yFilesHTML/demos/UMLDemoStyle/1.0" xmlns:compat="http://www.yworks.com/xml/yfiles-compat-arrows/1.0" xmlns:GraphvizNodeStyle="http://www.yworks.com/yFilesHTML/graphviz-node-style/1.0" xmlns:VuejsNodeStyle="http://www.yworks.com/demos/yfiles-vuejs-node-style/1.0" xmlns:y="http://www.yworks.com/xml/yfiles-common/3.0" xmlns:x="http://www.yworks.com/xml/yfiles-common/markup/3.0" xmlns:yjs="http://www.yworks.com/xml/yfiles-for-html/2.0/xaml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<key id="d0" for="node" attr.type="boolean" attr.name="Expanded" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/folding/Expanded">
+		<default>true</default>
+	</key>
+	<key id="d1" for="node" attr.type="string" attr.name="url"/>
+	<key id="d2" for="node" attr.type="string" attr.name="description"/>
+	<key id="d3" for="node" attr.name="NodeLabels" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/NodeLabels"/>
+	<key id="d4" for="node" attr.name="NodeGeometry" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/NodeGeometry"/>
+	<key id="d5" for="all" attr.name="UserTags" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/UserTags"/>
+	<key id="d6" for="node" attr.name="NodeStyle" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/NodeStyle"/>
+	<key id="d7" for="node" attr.name="NodeViewState" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/folding/1.1/NodeViewState"/>
+	<key id="d8" for="edge" attr.type="string" attr.name="url"/>
+	<key id="d9" for="edge" attr.type="string" attr.name="description"/>
+	<key id="d10" for="edge" attr.name="EdgeLabels" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/EdgeLabels"/>
+	<key id="d11" for="edge" attr.name="EdgeGeometry" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/EdgeGeometry"/>
+	<key id="d12" for="edge" attr.name="EdgeStyle" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/EdgeStyle"/>
+	<key id="d13" for="edge" attr.name="EdgeViewState" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/folding/1.1/EdgeViewState"/>
+	<key id="d14" for="port" attr.name="PortLabels" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/PortLabels"/>
+	<key id="d15" for="port" attr.name="PortLocationParameter" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/PortLocationParameter">
+		<default>
+			<x:Static Member="y:FreeNodePortLocationModel.NodeCenterAnchored"/>
+		</default>
+	</key>
+	<key id="d16" for="port" attr.name="PortStyle" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/PortStyle">
+		<default>
+			<x:Static Member="y:VoidPortStyle.Instance"/>
+		</default>
+	</key>
+	<key id="d17" for="port" attr.name="PortViewState" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/folding/1.1/PortViewState"/>
+	<key id="d18" attr.name="SharedData" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/SharedData"/>
+	<data key="d18">
+		<y:SharedData>
+			<yjs:Font x:Key="1" fontSize="12"/>
+			<yjs:SolidColorFill x:Key="2" color="#FF91B0DA"/>
+			<y:Json x:Key="3">{"id":1,"label":"READ N","type":"data"}</y:Json>
+			<demostyle:FlowchartNodeStyle x:Key="4" type="process" fill="{y:GraphMLReference 2}"/>
+			<yjs:SolidColorFill x:Key="5" color="#FFD2DEEE"/>
+			<yjs:PolylineEdgeStyle x:Key="6" smoothingLength="20" targetArrow="DEFAULT"/>
+			<yjs:Arrow x:Key="7" stroke="BLACK" fill="BLACK"/>
+			<yjs:PolylineEdgeStyle x:Key="8" targetArrow="{y:GraphMLReference 7}"/>
+			<yjs:PolylineEdgeStyle x:Key="9" targetArrow="{y:GraphMLReference 7}">
+				<yjs:PolylineEdgeStyle.stroke>
+					<yjs:Stroke fill="BLACK" dashStyle="Dash"/>
+				</yjs:PolylineEdgeStyle.stroke>
+			</yjs:PolylineEdgeStyle>
+		</y:SharedData>
+	</data>
+	<graph id="G" edgedefault="directed">
+		<data key="d5">
+			<y:Json>{"version":"2.0.0","layout":"layout-hierarchic"}</y:Json>
+		</data>
+		<node id="n0">
+			<data key="d3">
+				<x:List>
+					<y:Label LayoutParameter="{x:Static y:InteriorStretchLabelModel.Center}">
+						<y:Label.Text><![CDATA[Government
+Smart Contract
+BEGIN]]></y:Label.Text>
+						<y:Label.Style>
+							<yjs:DefaultLabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" wrapping="WORD" clipText="false" font="{y:GraphMLReference 1}" textFill="BLACK"/>
+						</y:Label.Style>
+					</y:Label>
+				</x:List>
+			</data>
+			<data key="d4">
+				<y:RectD X="170.3125" Y="162.29068452380952" Width="148.875" Height="80.75"/>
+			</data>
+			<data key="d5">
+				<y:Json>{"id":0,"label":"START","type":"start1"}</y:Json>
+			</data>
+			<data key="d6">
+				<demostyle:FlowchartNodeStyle type="start1" fill="{y:GraphMLReference 2}"/>
+			</data>
+			<port name="p0">
+				<data key="d15">
+					<y:FreeNodePortLocationModelParameter Ratio="0.2499999290951705,0.932542104427069"/>
+				</data>
+			</port>
+			<port name="p1">
+				<data key="d15">
+					<y:FreeNodePortLocationModelParameter Ratio="0.75,0.9325421475071957"/>
+				</data>
+			</port>
+			<port name="p2">
+				<data key="d15">
+					<y:FreeNodePortLocationModelParameter Ratio="0.9933719966859984,0.5"/>
+				</data>
+			</port>
+			<port name="p3"/>
+		</node>
+		<node id="n1">
+			<data key="d3">
+				<x:List>
+					<y:Label LayoutParameter="{x:Static y:InteriorStretchLabelModel.Center}">
+						<y:Label.Text><![CDATA[Issued by the Government,
+to control BlueCoin rewards]]></y:Label.Text>
+						<y:Label.Style>
+							<yjs:DefaultLabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" wrapping="WORD" clipText="false" textFill="BLACK">
+								<yjs:DefaultLabelStyle.font>
+									<yjs:Font fontSize="12"/>
+								</yjs:DefaultLabelStyle.font>
+							</yjs:DefaultLabelStyle>
+						</y:Label.Style>
+					</y:Label>
+				</x:List>
+			</data>
+			<data key="d4">
+				<y:RectD X="130" Y="56.09690476190474" Width="229.5" Height="60"/>
+			</data>
+			<data key="d6">
+				<demostyle:FlowchartNodeStyle type="preparation" fill="#FFC2D5EF"/>
+			</data>
+			<port name="p0"/>
+		</node>
+		<node id="n2">
+			<data key="d3">
+				<x:List>
+					<y:Label LayoutParameter="{x:Static y:InteriorStretchLabelModel.Center}">
+						<y:Label.Text><![CDATA[cancel()
+operation]]></y:Label.Text>
+						<y:Label.Style>
+							<yjs:DefaultLabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" wrapping="WORD" clipText="false" font="{y:GraphMLReference 1}" textFill="BLACK"/>
+						</y:Label.Style>
+					</y:Label>
+				</x:List>
+			</data>
+			<data key="d4">
+				<y:RectD X="135.0313492063492" Y="294.2344642857143" Width="145" Height="60"/>
+			</data>
+			<data key="d5">
+				<y:GraphMLReference ResourceKey="3"/>
+			</data>
+			<data key="d6">
+				<y:GraphMLReference ResourceKey="4"/>
+			</data>
+			<port name="p0">
+				<data key="d15">
+					<y:FreeNodePortLocationModelParameter Ratio="0.5,0"/>
+				</data>
+			</port>
+			<port name="p1">
+				<data key="d15">
+					<y:FreeNodePortLocationModelParameter Ratio="0.5,1"/>
+				</data>
+			</port>
+		</node>
+		<node id="n3">
+			<data key="d3">
+				<x:List>
+					<y:Label LayoutParameter="{x:Static y:InteriorStretchLabelModel.Center}">
+						<y:Label.Text><![CDATA[claimReward()
+operation]]></y:Label.Text>
+						<y:Label.Style>
+							<yjs:DefaultLabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" wrapping="WORD" clipText="false" font="{y:GraphMLReference 1}" textFill="BLACK"/>
+						</y:Label.Style>
+					</y:Label>
+				</x:List>
+			</data>
+			<data key="d4">
+				<y:RectD X="333.0313492063492" Y="294.2344642857143" Width="145" Height="60"/>
+			</data>
+			<data key="d5">
+				<y:GraphMLReference ResourceKey="3"/>
+			</data>
+			<data key="d6">
+				<y:GraphMLReference ResourceKey="4"/>
+			</data>
+			<port name="p0">
+				<data key="d15">
+					<y:FreeNodePortLocationModelParameter Ratio="0.25,0"/>
+				</data>
+			</port>
+			<port name="p1">
+				<data key="d15">
+					<y:FreeNodePortLocationModelParameter Ratio="0.5,1"/>
+				</data>
+			</port>
+			<port name="p2">
+				<data key="d15">
+					<y:FreeNodePortLocationModelParameter Ratio="0.9931972789115646,0.5"/>
+				</data>
+			</port>
+		</node>
+		<node id="n4">
+			<data key="d3">
+				<x:List>
+					<y:Label LayoutParameter="{x:Static y:InteriorStretchLabelModel.Center}">
+						<y:Label.Text><![CDATA[Who is signing
+the operation?]]></y:Label.Text>
+						<y:Label.Style>
+							<yjs:DefaultLabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" wrapping="WORD" clipText="false" font="Arial" textFill="BLACK" textSize="10"/>
+						</y:Label.Style>
+					</y:Label>
+				</x:List>
+			</data>
+			<data key="d4">
+				<y:RectD X="333.0313492063492" Y="394.2344642857142" Width="145" Height="71.0625"/>
+			</data>
+			<data key="d5">
+				<y:GraphMLReference ResourceKey="3"/>
+			</data>
+			<data key="d6">
+				<demostyle:FlowchartNodeStyle type="decision" fill="{y:GraphMLReference 2}"/>
+			</data>
+			<port name="p0">
+				<data key="d15">
+					<y:FreeNodePortLocationModelParameter Ratio="0.5,0"/>
+				</data>
+			</port>
+			<port name="p1">
+				<data key="d15">
+					<y:FreeNodePortLocationModelParameter Ratio="0.5,1"/>
+				</data>
+			</port>
+		</node>
+		<node id="n5">
+			<data key="d3">
+				<x:List>
+					<y:Label LayoutParameter="{x:Static y:InteriorStretchLabelModel.Center}">
+						<y:Label.Text><![CDATA[Requires payment:
+Leftover WasteTokens
+from Industry
+(amount & ID as specified)]]></y:Label.Text>
+						<y:Label.Style>
+							<yjs:DefaultLabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" wrapping="WORD" clipText="false" textFill="BLACK" textSize="9">
+								<yjs:DefaultLabelStyle.font>
+									<yjs:Font fontSize="9" fontWeight="BOLD"/>
+								</yjs:DefaultLabelStyle.font>
+							</yjs:DefaultLabelStyle>
+						</y:Label.Style>
+					</y:Label>
+				</x:List>
+			</data>
+			<data key="d4">
+				<y:RectD X="547.9688492063492" Y="295.17196428571424" Width="133.625" Height="58.125"/>
+			</data>
+			<data key="d6">
+				<demostyle:FlowchartNodeStyle type="card" fill="{y:GraphMLReference 5}"/>
+			</data>
+			<port name="p0"/>
+		</node>
+		<node id="n6">
+			<data key="d3">
+				<x:List>
+					<y:Label LayoutParameter="{x:Static y:InteriorStretchLabelModel.Center}">
+						<y:Label.Text><![CDATA[Transfer reward
+to "receiver" Industry]]></y:Label.Text>
+						<y:Label.Style>
+							<yjs:DefaultLabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" wrapping="WORD" clipText="false" textFill="BLACK">
+								<yjs:DefaultLabelStyle.font>
+									<yjs:Font fontSize="12"/>
+								</yjs:DefaultLabelStyle.font>
+							</yjs:DefaultLabelStyle>
+						</y:Label.Style>
+					</y:Label>
+				</x:List>
+			</data>
+			<data key="d4">
+				<y:RectD X="331.5313492063492" Y="543.2811817553882" Width="148" Height="64"/>
+			</data>
+			<data key="d6">
+				<demostyle:FlowchartNodeStyle type="terminator" fill="{y:GraphMLReference 5}"/>
+			</data>
+			<port name="p0">
+				<data key="d15">
+					<y:FreeNodePortLocationModelParameter Ratio="0.5,0"/>
+				</data>
+			</port>
+			<port name="p1">
+				<data key="d15">
+					<y:FreeNodePortLocationModelParameter Ratio="0.5,1"/>
+				</data>
+			</port>
+		</node>
+		<node id="n7">
+			<data key="d3">
+				<x:List>
+					<y:Label>
+						<y:Label.Text><![CDATA[Data stored:
+• Receiver (an Industry address)
+• Government (the address of the issuer)
+• Amount and ID of WasteToken assets
+    required for the reward]]></y:Label.Text>
+						<y:Label.LayoutParameter>
+							<y:RatioAnchoredLabelModelParameter LayoutRatio="0.5,0.5" LabelRatio="0.5,0.5"/>
+						</y:Label.LayoutParameter>
+						<y:Label.Style>
+							<yjs:DefaultLabelStyle verticalTextAlignment="CENTER" wrapping="WORD" clipText="false" textFill="BLACK" textSize="10">
+								<yjs:DefaultLabelStyle.font>
+									<yjs:Font fontWeight="BOLD"/>
+								</yjs:DefaultLabelStyle.font>
+							</yjs:DefaultLabelStyle>
+						</y:Label.Style>
+					</y:Label>
+				</x:List>
+			</data>
+			<data key="d4">
+				<y:RectD X="469.7188492063492" Y="164.4844642857144" Width="211.875" Height="89.75"/>
+			</data>
+			<data key="d6">
+				<demostyle:FlowchartNodeStyle type="card" fill="{y:GraphMLReference 5}"/>
+			</data>
+			<port name="p0"/>
+		</node>
+		<node id="n8">
+			<data key="d3">
+				<x:List>
+					<y:Label LayoutParameter="{x:Static y:InteriorStretchLabelModel.Center}">
+						<y:Label.Text><![CDATA[Transfer payment of WasteTokens
+to the Government wallet]]></y:Label.Text>
+						<y:Label.Style>
+							<yjs:DefaultLabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" wrapping="WORD" clipText="false" font="Arial" textFill="BLACK" textSize="10"/>
+						</y:Label.Style>
+					</y:Label>
+				</x:List>
+			</data>
+			<data key="d4">
+				<y:RectD X="331.5313492063492" Y="627.2811817553882" Width="148" Height="64"/>
+			</data>
+			<data key="d6">
+				<demostyle:FlowchartNodeStyle type="terminator" fill="{y:GraphMLReference 5}"/>
+			</data>
+			<port name="p0">
+				<data key="d15">
+					<y:FreeNodePortLocationModelParameter Ratio="0.5,0"/>
+				</data>
+			</port>
+		</node>
+		<node id="n9">
+			<data key="d3">
+				<x:List>
+					<y:Label LayoutParameter="{x:Static y:InteriorStretchLabelModel.Center}">
+						<y:Label.Text><![CDATA[Who is signing
+the operation?]]></y:Label.Text>
+						<y:Label.Style>
+							<yjs:DefaultLabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" wrapping="WORD" clipText="false" font="Arial" textFill="BLACK" textSize="10"/>
+						</y:Label.Style>
+					</y:Label>
+				</x:List>
+			</data>
+			<data key="d4">
+				<y:RectD X="135.0313492063492" Y="394.2344642857142" Width="145" Height="71.0625"/>
+			</data>
+			<data key="d5">
+				<y:GraphMLReference ResourceKey="3"/>
+			</data>
+			<data key="d6">
+				<demostyle:FlowchartNodeStyle type="decision" fill="{y:GraphMLReference 2}"/>
+			</data>
+			<port name="p0">
+				<data key="d15">
+					<y:FreeNodePortLocationModelParameter Ratio="0.5,0"/>
+				</data>
+			</port>
+			<port name="p1">
+				<data key="d15">
+					<y:FreeNodePortLocationModelParameter Ratio="0.5,1"/>
+				</data>
+			</port>
+		</node>
+		<node id="n10">
+			<data key="d3">
+				<x:List>
+					<y:Label LayoutParameter="{x:Static y:InteriorStretchLabelModel.Center}">
+						<y:Label.Text><![CDATA[Return BlueCoins
+to the Government wallet]]></y:Label.Text>
+						<y:Label.Style>
+							<yjs:DefaultLabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" wrapping="WORD" clipText="false" textFill="BLACK">
+								<yjs:DefaultLabelStyle.font>
+									<yjs:Font fontSize="12"/>
+								</yjs:DefaultLabelStyle.font>
+							</yjs:DefaultLabelStyle>
+						</y:Label.Style>
+					</y:Label>
+				</x:List>
+			</data>
+			<data key="d4">
+				<y:RectD X="133.5313492063492" Y="543.2811817553882" Width="148" Height="64"/>
+			</data>
+			<data key="d6">
+				<demostyle:FlowchartNodeStyle type="terminator" fill="{y:GraphMLReference 5}"/>
+			</data>
+			<port name="p0">
+				<data key="d15">
+					<y:FreeNodePortLocationModelParameter Ratio="0.5,0"/>
+				</data>
+			</port>
+		</node>
+		<edge id="e0" source="n0" target="n2" sourceport="p0" targetport="p0">
+			<data key="d12">
+				<y:GraphMLReference ResourceKey="6"/>
+			</data>
+		</edge>
+		<edge id="e1" source="n0" target="n3" sourceport="p1" targetport="p0">
+			<data key="d11">
+				<x:List>
+					<y:Bend Location="281.96875,253.04068452380952"/>
+					<y:Bend Location="369.2813492063492,279.2344642857143"/>
+				</x:List>
+			</data>
+			<data key="d12">
+				<y:GraphMLReference ResourceKey="6"/>
+			</data>
+		</edge>
+		<edge id="e2" source="n3" target="n4" sourceport="p1" targetport="p0">
+			<data key="d12">
+				<yjs:PolylineEdgeStyle targetArrow="{y:GraphMLReference 7}"/>
+			</data>
+		</edge>
+		<edge id="e3" source="n4" target="n6" sourceport="p1" targetport="p0">
+			<data key="d10">
+				<x:List>
+					<y:Label>
+						<y:Label.Text><![CDATA[The industry marked as "receiver"
+during Contract deployment]]></y:Label.Text>
+						<y:Label.LayoutParameter>
+							<y:FreeEdgeLabelModelParameter Ratio="0.38874510907344345" Distance="-85"/>
+						</y:Label.LayoutParameter>
+						<y:Label.Style>
+							<yjs:DefaultLabelStyle verticalTextAlignment="CENTER" wrapping="WORD" font="Arial" textFill="BLACK" textSize="10"/>
+						</y:Label.Style>
+					</y:Label>
+					<y:Label>
+						<y:Label.Text><![CDATA[The Government]]></y:Label.Text>
+						<y:Label.LayoutParameter>
+							<y:FreeEdgeLabelModelParameter Ratio="0.2813515841816056" Distance="244.75000000000045"/>
+						</y:Label.LayoutParameter>
+						<y:Label.Style>
+							<yjs:DefaultLabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="RIGHT" wrapping="WORD" font="Arial" textFill="BLACK" textSize="10"/>
+						</y:Label.Style>
+					</y:Label>
+				</x:List>
+			</data>
+			<data key="d12">
+				<yjs:PolylineEdgeStyle targetArrow="{y:GraphMLReference 7}"/>
+			</data>
+		</edge>
+		<edge id="e4" source="n6" target="n8" sourceport="p1" targetport="p0">
+			<data key="d12">
+				<y:GraphMLReference ResourceKey="8"/>
+			</data>
+		</edge>
+		<edge id="e5" source="n2" target="n9" sourceport="p1" targetport="p0">
+			<data key="d12">
+				<y:GraphMLReference ResourceKey="8"/>
+			</data>
+		</edge>
+		<edge id="e6" source="n9" target="n10" sourceport="p1" targetport="p0">
+			<data key="d12">
+				<y:GraphMLReference ResourceKey="8"/>
+			</data>
+		</edge>
+		<edge id="e7" source="n7" target="n0" sourceport="p0" targetport="p2">
+			<data key="d12">
+				<y:GraphMLReference ResourceKey="9"/>
+			</data>
+		</edge>
+		<edge id="e8" source="n5" target="n3" sourceport="p0" targetport="p2">
+			<data key="d12">
+				<y:GraphMLReference ResourceKey="9"/>
+			</data>
+		</edge>
+		<edge id="e9" source="n1" target="n0" sourceport="p0" targetport="p3">
+			<data key="d12">
+				<y:GraphMLReference ResourceKey="9"/>
+			</data>
+		</edge>
+	</graph>
+</graphml>

@@ -1,0 +1,150 @@
+;;; An expert-system algorithm to detect and identify discrepancies
+;;; within Industries & Environmental Zones of a Bluechain implementation.
+;;; The proposed algorith runs in Rounds, and is based on the Component Exoneration problem.
+;;; ### Input: A list of overtaxed Environmental Zones, with too much measured waste (referred to as discrepancies)
+;;; ### Output: A list of all Industries connected to the discrepancy-showing Environmental Zones,
+;;; 			and are therefore suspects of bad disposal practices and require further reviewing.
+				If non-suspect environments are overwhelmingly connected to a suspect Industry, that Industry is exonerated.
+
+;;; Base abstract class for this proposal, has a suspect: {true, false} field.
+(defclass BluechainElement
+	(is-a USER)
+	(role abstract)
+	(slot suspect (type SYMBOL) (allowed-symbols yes no) (default no)
+)
+
+;;; Environmental Zones are a pure child of the Bluechain element, without further method implementations.
+(defclass EnvironmentalZone
+	(is-a BluechainElement)
+	(role concrete)
+	(patteren-match reactive)
+)
+
+;;; An Industry is connected with Environmental Zone instances, if it has performed waste disposal operations on it.
+(defclss Industry
+	(is-a BluechainElement)
+	(role concrete)
+	(pattern-match reactive)
+	(multislot connects_with (type INSTANCE-NAME))
+)
+
+;;; Object definition. They represent a micro-model of a Bluechain implementation.
+(definstances industries-and-environmental-zones
+	(industry0 of Industry)
+	(industry1 of Industry)
+	(industry2 of Industry)
+	(environment0 of EnvironmentalZone)
+	(environment1 of EnvironmentalZone)
+	(environment2 of EnvironmentalZone)
+)
+
+;;; Initial data input Rule.
+(defrule initial-question
+	?x <- (initial-fact)
+	=>
+	(retract ?x)
+	(bind $?environments (find-all-instances ((?e EnvironmentalZone)) TRUE))
+	(set-strategy mea) ;;; Strategy 'lex' also works in this example
+	(printout t "Which environments show up overtaxed in the data?" " $?environments " ")
+	(bind $?answer (explode$ (readline)))
+	(assert (discrepancy $?answer))
+	(assert (goal build-suspects))
+)
+
+;;; Initial identification of problematic environmental zones.
+(defrule init-suspects
+	(goal build-suspects)
+	(discrepancy $? ?e $?)
+	(object (is-a EnvironmentalZone)
+			(name =(symbol-to-instance-name ?e))
+			(suspect no)
+	)
+	=>
+	(modify-instance (symbol-to-instance-name ?e) (suspect yes))
+)
+
+;;; Initial incrimination of Industries connected to problematic environmental zones.
+(defrule propagate-suspect
+	(goal build-suspects)
+	(object (is-a BluechainElement)
+			(name ?be)
+			(suspect yes)
+	)
+	(object (is-a Industry)
+			(name ?i)
+			(connects_with $? ?be $?)
+			(suspect no)
+	)
+	=>
+	(modify instance ?i (suspect yes))
+)
+
+;;; We now change goals, and try to exonerate Industries connected to non-problematic environments.
+(defrule make-suspects-continue
+	?x <- (goal build-suspects)
+	=>
+	(retract ?x)
+	(assert (goal exonerate-industries))
+)
+
+;;; Rule of Industry exoneration, if they are connected to non-problematic environments or industries.
+(defrule exonerate-industries
+	(goal exonerate-industries)
+	(object (is-a Industry)
+			(name ?i)
+			(suspect yes)
+			(connects_with $? ?e $?)
+	)
+	(object (is-a EnvironmentalZone)
+			(name ?e)
+			(suspect no)
+	)
+	=>
+	(modify-instance ?i (suspect-no))
+)
+
+;;; Another Industrym exoneration rule, due to unexplained disagreement of suspect environmments
+(defrule exonerate-industries-special
+	(goal exonerate-industries)
+	(object (is-a Industry)
+			(name ?i)
+			(suspect yes)
+			(connects_with $?environments)
+	)
+	(not (object (is-a Environment)
+				(name ?e0 &: (member $? ?e0 $?environments))
+				(suspect no)
+		 )
+	)
+	(object (is-a Environment)
+			(name ?e1 &: (not (member $? ?e1 $?environments)))
+			(suspect yes)
+	)
+	=>
+	(modify-instance ?i (suspect no))
+)
+
+;; Change goals from (now finished) Industry Exoneration to Announce Results
+(defrule exonerate-industries-finished
+	?x <- (goal exonerate-industries)
+	=>
+	(retract ?x)
+	(assert (goal announce-results))
+)
+
+;;; Anounce final results rule
+(defrule announce-results
+	(goal announce-results)
+	(object (is-a BluechainElement)
+			(name ?be)
+			(suspect yes)
+	)
+	(not (object (is-a Environment)
+				 (name ~?be)
+				 (suspect yes)
+				 (connects_with $? ?be $?)
+		 )
+	)
+	=>
+	(printout t (class ?be) " " (instance-name-to-symbol ?be) " is a suspect." crlf)
+)

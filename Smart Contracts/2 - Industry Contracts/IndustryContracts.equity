@@ -1,0 +1,31 @@
+contract IndustryContract( 	issuingIndustrySig: PublicKey,
+							issuingIndustry: Program,
+							recipientEnvironment: Program,
+							recipientEnvironmentHandlerKey: PublicKey,
+							wasteTypeMultiplier: Integer,
+							delegatedScientificTeam0: PublicKey,
+							delegatedScientificTeam1: PublicKey,
+							WasteCapacityTokenAmountRequested: Amount,
+							WasteCapacityTokenAssetID: Asset) locks WasteTokenAmount of WasteTokenAsset
+{
+	clause confirmDisposal(this_env_handler_sig, this_sci_team_sig: Signature) requires payment: WasteCapacityTokenAmountRequested of WasteCapacityTokenAssetID
+	{
+		verify (wasteTypeMultiplier > 0)
+		verify checkTxMultiSig([recipientEnvironmentHandlerKey, delegatedScientificTeam0, delegatedScientificTeam1] , [this_env_handler_sig, this_sci_team_sig])
+		verify ( (WasteTokenAmount * wasteTypeMultiplier) >= WaterCapacityAmount )
+		lock payment with issuingIndustry
+		lock WasteTokenAmount of WasteTokenAsset with recipientEnvironment
+	}
+	
+	clause rejectDisposal(this_sci_team_sig0, this_sci_team_sig1: Signature)
+	{
+		verify checkTxMultisig( [delegatedScientificTeam0, delegatedScientificTeam1] , [this_sci_team_sig0, this_sci_team_sig1] )
+		lock WasteTokenAmount of WasteTokenAsset with issuingIndustry
+	}
+	
+	clause cancel(cancelling_sig: Signature)
+	{
+		verify checkTxSig(cancelling_sig, issuingIndustrySig)
+		unlock WasteTokenAmount of WasteTokenAsset
+	}
+}

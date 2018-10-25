@@ -1,0 +1,39 @@
+contract GovernmentRewardContract(governmentKey: PublicKey,
+								governmentProgram: Program,
+								receiverIndustryKey: PublicKey,
+								receiverIndustryProgram: Program,
+								t_coefficient: Integer,
+								rewardRatio: Integer,
+								rewardRatioPowerOfTen: Integer,
+								WasteTokenAmountRequested: Amount,
+								WasteTokenAssetID: Asset,
+								WaterCapacityTokenAmountRequested: Amount,
+								WaterCapacityTokenAssetID: Asset) locks BlueCoinAmount of BlueCoinAssets 
+{
+	clause claimReward(this_sig: Signature) requires payment0: WasteTokenAmountRequested of WasteTokenAssetID, payment1: WaterCapacityTokenAmountRequested of WaterCapacityTokenAssetID
+	{
+		verify checkTxSig(this_sig, receiverIndustryKey)
+		verify ((rewardRatio > 0) && (rewardRatioPowerOfTen > 0) && (rewardRatioPowerOfTen > rewardRatio))
+		if WasteTokenAmountRequested > 0 && ((WasteTokenAmountRequested / t_coefficient)*(rewardRatio / rewardRatioPowerOfTen)) < BlueCoinAmount
+		{
+			lock (WasteTokenAmountRequested*(rewardRatio/rewardRatioPowerOfTen)) of BlueCoinAssets with receiverIndustryProgram
+			lock payment0 with governmentProgram
+			lock ( BlueCoinAmount - ((WasteTokenAmountRequested / t_coefficient)*(rewardRatio / rewardRatioPowerOfTen)) ) of BlueCoinAssets with GovernmentContract(governmentKey, governmentProgram, receiverIndustryKey, receiverIndustryProgram, t_coefficient, rewardRatio, rewardRatioPowerOfTen, WasteTokenAmountRequested, WasteTokenAssetID, WaterCapacityTokenAmountRequested, WaterCapacityTokenAssetID)
+		}
+		else
+		{
+			lock payment0 with governmentProgram
+			lock BlueCoinAmount of BlueCoinAssets with receiverIndustryProgram
+		}
+		lock payment1 with governmentProgram
+	}
+
+	clause cancelReward(this_sig: Signature)
+	{
+		verify checkTxSig(this_sig, governmentKey)
+		unlock BlueCoinAmount of BlueCoinAssets
+	}
+}
+
+/* Single line */
+curl -X POST http://localhost:9888/compile -d '{"contract":"contract GovernmentRewardContract(governmentKey: PublicKey, governmentProgram: Program, receiverIndustryKey: PublicKey, receiverIndustryProgram: Program, t_coefficient: Integer, rewardRatio: Integer, rewardRatioPowerOfTen: Integer, WasteTokenAmountRequested: Amount, WasteTokenAssetID: Asset, WaterCapacityTokenAmountRequested: Amount, WaterCapacityTokenAssetID: Asset) locks BlueCoinAmount of BlueCoinAssets { clause claimReward(this_sig: Signature) requires payment0: WasteTokenAmountRequested of WasteTokenAssetID, payment1: WaterCapacityTokenAmountRequested of WaterCapacityTokenAssetID { verify checkTxSig(this_sig, receiverIndustryKey) verify ((rewardRatio > 0) && (rewardRatioPowerOfTen > 0) && (rewardRatioPowerOfTen > rewardRatio)) if WasteTokenAmountRequested > 0 && ((WasteTokenAmountRequested / t_coefficient)*(rewardRatio / rewardRatioPowerOfTen)) < BlueCoinAmount { lock (WasteTokenAmountRequested*(rewardRatio/rewardRatioPowerOfTen)) of BlueCoinAssets with receiverIndustryProgram lock payment0 with governmentProgram lock ( BlueCoinAmount - ((WasteTokenAmountRequested / t_coefficient)*(rewardRatio / rewardRatioPowerOfTen)) ) of BlueCoinAssets with GovernmentContract(governmentKey, governmentProgram, receiverIndustryKey, receiverIndustryProgram, t_coefficient, rewardRatio, rewardRatioPowerOfTen, WasteTokenAmountRequested, WasteTokenAssetID, WaterCapacityTokenAmountRequested, WaterCapacityTokenAssetID) } else { lock payment0 with governmentProgram lock BlueCoinAmount of BlueCoinAssets with receiverIndustryProgram } lock payment1 with governmentProgram } clause cancelReward(this_sig: Signature) { verify checkTxSig(this_sig, governmentKey) unlock BlueCoinAmount of BlueCoinAssets } }"}'

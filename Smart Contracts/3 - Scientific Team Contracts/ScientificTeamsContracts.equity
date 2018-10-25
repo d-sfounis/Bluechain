@@ -1,0 +1,17 @@
+contract ScientificTeamContract( issuingSciTeamKey: PublicKey,
+								 recipientEnvironmentalZone: Program,
+								 recipientEnvironmentalZoneKey: PublicKey,
+								 governmentKey: PublicKey) locks WaterTokenAmount of WaterTokenAsset /* Or WaterCapacityToken, or WasteCapacityToken. */
+{																									 /* The issuing of all of these follows the same control procedure */
+	clause approve(recipient_env_sig, government_sig: Signature)
+	{
+		verify checkTxMultiSig( [recipientEnvironmentalZoneKey, governmentKey], [recipient_env_sig, government_sig] )
+		lock WaterTokenAmount of WatertokenAsset with recipientEnvironmentalZone
+	}
+	
+	clause cancel(cancelling_sig: Signature)
+	{
+		verify checkTxSig(cancelling_sig, issuingSciTeamKey)
+		unlock WaterTokenAmount of waterTokenAsset
+	}
+}
