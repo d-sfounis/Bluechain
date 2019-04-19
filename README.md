@@ -8,7 +8,8 @@
 <h1 align="center">Bluechain for BYTOM</h1>
 
 <p align="center">
-A Smart-Contract based, distributed system for industrial waste and resource management. Powerful, trustless, government-friendly and fully transparent,<br>
+A Smart-Contract based, distributed system for industrial waste and resource management.
+<br>Powerful, trustless, government-friendly and fully transparent,<br>
 powered by <b>the BYTOM Blockchain</b> - https://bytom.io
 </p>
 
